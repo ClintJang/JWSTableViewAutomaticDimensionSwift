@@ -8,5 +8,5 @@
 
 import Foundation
 
-let kTextKey: NSString = "TextKey"          // text key
-let kImageKey: NSString = "ImageKey"        // image key
+let kTextKey: String = "TextKey"          // text key
+let kImageKey: String = "ImageKey"        // image key

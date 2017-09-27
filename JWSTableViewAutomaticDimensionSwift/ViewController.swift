@@ -18,30 +18,30 @@ import UIKit
  */
 
 // Text Sample Cell
-class TextSampleTableViewCell : UITableViewCell {
+final class TextSampleTableViewCell : UITableViewCell {
     
     @IBOutlet weak var textMsgLabel: UILabel!
     
     
-    public func initLayout( data: NSDictionary )
+    public func initLayout( data: [String:String] )
     {
-        self.textMsgLabel.text = data.object(forKey: kTextKey) as? String
+        self.textMsgLabel.text = data[kTextKey]!
     }
 }
 
 // Image Sample Cell
-class ImageSampleTableViewCell : UITableViewCell {
+final class ImageSampleTableViewCell : UITableViewCell {
     
     @IBOutlet weak var sampleImageView: UIImageView!
     
     @IBOutlet weak var sampleImageViewLayoutConstraintWidth: NSLayoutConstraint!
     @IBOutlet weak var sampleImageViewLayoutConstraintHeight: NSLayoutConstraint!
     
-    public func initLayout( data: NSDictionary )
+    public func initLayout( data: [String:String] )
     {
-        let imageNameString = data.object(forKey: kImageKey) as? String
+        let imageNameString:String = data[kTextKey]!
         
-        if let image = UIImage(named:imageNameString!)
+        if let image = UIImage(named:imageNameString)
         {
             self.sampleImageViewLayoutConstraintWidth.constant = image.size.width
             self.sampleImageViewLayoutConstraintHeight.constant = image.size.height
@@ -57,7 +57,7 @@ class ImageSampleTableViewCell : UITableViewCell {
 }
 
 // Text And Image Sample Cell
-class TextAndImageSampleTableViewCell : UITableViewCell {
+final class TextAndImageSampleTableViewCell : UITableViewCell {
     
     @IBOutlet weak var textMsgLabel: UILabel!
     @IBOutlet weak var sampleImageView: UIImageView!
@@ -65,14 +65,13 @@ class TextAndImageSampleTableViewCell : UITableViewCell {
     @IBOutlet weak var sampleImageViewLayoutConstraintWidth: NSLayoutConstraint!
     @IBOutlet weak var sampleImageViewLayoutConstraintHeight: NSLayoutConstraint!
     
-    public func initLayout( data: NSDictionary )
+    public func initLayout( data: [String:String] )
     {
-        self.textMsgLabel.text = data.object(forKey: kTextKey) as? String
+        self.textMsgLabel.text = data[kTextKey]!
         
+        let imageNameString = data[kImageKey]!
         
-        let imageNameString = data.object(forKey: kImageKey) as? String
-        
-        if let image = UIImage(named:imageNameString!)
+        if let image = UIImage(named:imageNameString)
         {
             self.sampleImageViewLayoutConstraintWidth.constant = image.size.width
             self.sampleImageViewLayoutConstraintHeight.constant = image.size.height
@@ -92,7 +91,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // Test Data
-    let list :NSArray = [
+//    let list:[[String:String]] = [ ["": ""] ]
+    let list :Array<[String:String]>  = [
         [
             kTextKey :
             " 1절 : 동해물과 백두산이 마르고 닳도록, 하느님이 보우하사 우리나라만세." +
@@ -141,52 +141,52 @@ class ViewController: UIViewController {
             kTextKey :
             "ㅂ+ 한자 키" +
             "─ │ ┌ ┐ ┘ └ ├ ┬ ┤ ┴ │ ━ ┃ ┏ ┓ ┛ ┗ ┣ ┳ ┫ ┻ ╋ ┠ ┯ ┨ ┷ ┿ ┝ ┰ ┥ ┸ ╂ ┒ ┑┚┙┖ ┕ ┎ ┍ ┞ ┟ ┡ ┢ ┦ ┧ ┩ ┪ ┭ ┮ ┱ ┲ ┵ ┶ ┹ ┺ ┽ ┾ ╀ ╁ ╃ ╄ ╅ ╆ ╇ ╈ ╉ ╊" +
-            
+
             "ㅁ+ 한자 키" +
             "＃ ＆ ＊ ＠ § ※ ☆ ★ ○ ● ◎ ◇ ◆ □ ■ △ ▲ ▽ ▼ → ← ↑ ↓ ↔ 〓 ◁ ◀ ▷ ▶ ♤ ♠ ♡ ♥ ♧ ♣ ⊙ ◈ ▣ ◐ ◑ ▒ ▤ ▥ ▨ ▧ ▦ ▩ ♨ ☏ ☎ ☜ ☞ ¶ † ‡ ↕ ↗ ↙ ↖ ↘ ♭ ♩ ♪ ♬ ㉿ ㈜ № ㏇ ™ ㏂ ㏘ ℡ ? ª º" +
-            
+
             "ㄱ+ 한자 키" +
             "！ ＇ ， ． ／ ： ； ？ ＾ ＿ ｀ ｜ ￣ 、 、 。 · ‥ … ¨ 〃 ­ ― ∥ ＼ ∼ ´ ～ ˇ ˘ ˝ ˚ ˙ ¸ ˛ ¡ ¿ ː" +
-            
+
             "ㄷ + 한자 키" +
             "＋－＜＝＞± × ÷ ≠ ≤ ≥ ∞ ∴ ♂ ♀ ∠ ⊥ ⌒ ∂ ∇ ≡ ≒ ≪ ≫ √ ∽ ∝ ∵ ∫ ∬ ∈ ∋ ⊆ ⊇ ⊂ ⊃ ∪ ∩ ∧ ∨ ￢ ⇒ ⇔ ∀ ∃ ∮ ∑ ∏" +
-            
+
             "ㅎ+ 한자 키" +
             "Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω" +
-            
+
             "ㄲ+ 한자 키" +
             "Æ Ð Ħ Ĳ Ŀ Ł Ø Œ Þ Ŧ Ŋ æ đ ð ħ ı ĳ ĸ ŀ ł ø œ ß þ ŧ ŋ ŉ" +
-            
+
             "ㅆ+ 한자 키" +
             "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я" +
-            
+
             "ㅈ + 한자 키" +
             "ⅰ ⅱ ⅲ ⅳ ⅴ ⅵ ⅶ ⅷ ⅸ ⅹ Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ" +
-            
+
             "ㅅ+ 한자 키" +
             "㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭ ㉮ ㉯ ㉰ ㉱ ㉲ ㉳ ㉴ ㉵ ㉶ ㉷ ㉸ ㉹ ㉺ ㉻ ㈀ ㈁ ㈂ ㈃ ㈄ ㈅ ㈆ ㈇ ㈈ ㈉ ㈊ ㈋ ㈌ ㈍ ㈎ ㈏ ㈐ ㈑ ㈒ ㈓ ㈔ ㈕ ㈖ ㈗ ㈘ ㈙ ㈚ ㈛" +
-            
+
             "ㄴ+ 한자 키" +
             "＂ （ ） ［ ］ ｛ ｝ ‘ ’ “ ” 〔 〕 〈 〉 《 》 「 」 『 』 【 】" +
-            
+
             "ㅇ+ 한자 키" +
             "ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⒜ ⒝ ⒞ ⒟ ⒠ ⒡ ⒢ ⒣ ⒤ ⒥ ⒦ ⒧ ⒨ ⒩ ⒪ ⒫ ⒬ ⒭ ⒮ ⒯ ⒰ ⒱ ⒲ ⒳ ⒴ ⒵ ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⑾ ⑿ ⒀ ⒁ ⒂" +
-            
+
             "ㄹ+ 한자 키" +
             "＄ ％ ￦ Ｆ ′ ″ ℃ Å ￠ ￡ ￥ ¤ ℉ ‰ ? ㎕ ㎖ ㎗ ℓ ㎘ ㏄ ㎣ ㎤ ㎥ ㎥ ㎦ ㎙ ㎚ ㎛ ㎜ ㎝ ㎞ ㎟ ㎠ ㎡ ㎢ ㏊ ㎍ ㎎ ㎏ ㏏ ㎈ ㎉ ㏈ ㎧ ㎨ ㎰ ㎱ ㎲ ㎳ ㎴ ㎵ ㎶ ㎷ ㎸ ㎹ ㎀ ㎁ ㎂ ㎃ ㎄ ㎺ ㎻ ㎼ ㎽ ㎾ ㎿ ㎐ ㎑ ㎒ ㎓ ㎔ Ω ㏀ ㏁ ㎊ ㎋ ㎌ ㏖ ㏅ ㎭ ㎮ ㎯ ㏛ ㎩ ㎪ ㎫ ㎬ ㏝ ㏐ ㏓ ㏃ ㏉ ㏜ ㏆" +
-            
+
             "ㅌ+ 한자 키" +
             "ㅥ ㅦ ㅧ ㅨ ㅩ ㅪ ㅫ ㅬ ㅭ ㅮ ㅯ ㅰ ㅱ ㅲ ㅳ ㅴ ㅵ ㅶ ㅷ ㅸ ㅹ ㅺ ㅻ ㅼ ㅽ ㅾ ㅿ ㆀ ㆁ ㆂ ㆃ ㆄ ㆅ ㆆ ㆇ ㆈ ㆉ ㆊ ㆋ ㆌ ㆍ ㆎ" +
-            
+
             "ㅊ+ 한자 키" +
             "½ ⅓ ⅔ ¼ ¾ ⅛ ⅜ ⅝ ⅞ ¹ ² ³ ⁴ ⁿ ₁ ₂ ₃ ₄" +
-            
+
             "ㅃ+ 한자 키" +
             "ァ ア ィ イ ゥ ウ ェ エ ォ オ カ ガ キ ギ ク グ ケ ゲ コ ゴ サ ザ シ ジ ス ズ セ ゼ ソ ゾ タ ダ チ ヂ ッ ツ ヅ テ デ トド ナ ニヌ ネ ノ ハ バ パ ヒ ビ ピ フ ブ プ ヘ ベ ペ ホ ボ ポ マ ミ ム メ モ ャ ヤ ュ ユ ョ ヨ ラ リ ル レ ロ ヮ ワ ヰ ヱ ヲ ン ヴ ヵ ヶ" +
-            
+
             "ㄸ+ 한자 키" +
             "ぁ あ ぃ い ぅ う ぇ え ぉ お か が き ぎ く ぐ け げ こ ご さ ざ し じ す ず せ ぜ そ ぞ た だ ち ぢ っ つ づ て で と ど な に ぬ ね の は ば ぱ ひ び ぴ ふ ぶ ぷ へ べ ぺ ほ ぼ ぽ ま み む め も ゃ や ゅ ゆ ょ よ ら り る れ ろ ゎ わ ゐ ゑ を ん"
-            ,kImageKey:""
+            ,kImageKey:"sample_102_484"
         ]
     ]
 
@@ -238,20 +238,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextSampleTableViewCell", for: indexPath) as! TextSampleTableViewCell
 //            let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(TextSampleTableViewCell.classForCoder()).components(separatedBy: ".").last!, for: indexPath) as! TextSampleTableViewCell
-            cell.initLayout(data: self.list.object(at: indexPath.row) as! NSDictionary )
+            cell.initLayout(data: self.list[indexPath.row] as [String:String] )
             return cell
         }
         else if (indexPath.section == 1)
             // Image Sample
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSampleTableViewCell", for: indexPath) as! ImageSampleTableViewCell
-            cell.initLayout(data: self.list.object(at: indexPath.row) as! NSDictionary )
+            cell.initLayout(data: self.list[indexPath.row] as [String:String] )
             return cell
         }
         else if (indexPath.section == 2)
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextAndImageSampleTableViewCell", for: indexPath) as! TextAndImageSampleTableViewCell
-            cell.initLayout(data: self.list.object(at: indexPath.row) as! NSDictionary )
+            cell.initLayout(data: self.list[indexPath.row] as [String:String] )
             return cell
         }
         else
