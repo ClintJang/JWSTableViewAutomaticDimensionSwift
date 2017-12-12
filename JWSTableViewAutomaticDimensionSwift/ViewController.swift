@@ -17,75 +17,6 @@ import UIKit
  @Brief Self-Sizing Table View Cells Sample App
  */
 
-// Text Sample Cell
-final class TextSampleTableViewCell : UITableViewCell {
-    
-    @IBOutlet weak var textMsgLabel: UILabel!
-    
-    
-    public func initLayout( data: [String:String] )
-    {
-        self.textMsgLabel.text = data[kTextKey]!
-    }
-}
-
-// Image Sample Cell
-final class ImageSampleTableViewCell : UITableViewCell {
-    
-    @IBOutlet weak var sampleImageView: UIImageView!
-    
-    @IBOutlet weak var sampleImageViewLayoutConstraintWidth: NSLayoutConstraint!
-    @IBOutlet weak var sampleImageViewLayoutConstraintHeight: NSLayoutConstraint!
-    
-    public func initLayout( data: [String:String] )
-    {
-        let imageNameString:String = data[kTextKey]!
-        
-        if let image = UIImage(named:imageNameString)
-        {
-            self.sampleImageViewLayoutConstraintWidth.constant = image.size.width
-            self.sampleImageViewLayoutConstraintHeight.constant = image.size.height
-            
-            self.sampleImageView.image = image
-        }
-        else
-        {
-            self.sampleImageViewLayoutConstraintWidth.constant = 0.0
-            self.sampleImageViewLayoutConstraintHeight.constant = 0.0
-        }
-    }
-}
-
-// Text And Image Sample Cell
-final class TextAndImageSampleTableViewCell : UITableViewCell {
-    
-    @IBOutlet weak var textMsgLabel: UILabel!
-    @IBOutlet weak var sampleImageView: UIImageView!
-    
-    @IBOutlet weak var sampleImageViewLayoutConstraintWidth: NSLayoutConstraint!
-    @IBOutlet weak var sampleImageViewLayoutConstraintHeight: NSLayoutConstraint!
-    
-    public func initLayout( data: [String:String] )
-    {
-        self.textMsgLabel.text = data[kTextKey]!
-        
-        let imageNameString = data[kImageKey]!
-        
-        if let image = UIImage(named:imageNameString)
-        {
-            self.sampleImageViewLayoutConstraintWidth.constant = image.size.width
-            self.sampleImageViewLayoutConstraintHeight.constant = image.size.height
-            
-            self.sampleImageView.image = image
-        }
-        else
-        {
-            self.sampleImageViewLayoutConstraintWidth.constant = 0.0
-            self.sampleImageViewLayoutConstraintHeight.constant = 0.0
-        }
-    }
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -195,11 +126,10 @@ class ViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        // 이 두줄의 코드 만으로 셀크기를 동적으로 렌더링 하도록 지시할 수 있음!
-        // estimatedRowHeight : 예상 수치 설정, Default 0, 그러나 1로 하면 에러가 난다. 2 이상의 값으로 하자
+        // These two lines of code will dynamically render the cell size.
+        // estimatedRowHeight : Setting the expected value, Default 0, but setting it to 1 causes an error. Let it be 2 or more
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -210,7 +140,7 @@ class ViewController: UIViewController {
     
 }
 
-// MARK: - 더미
+// MARK: - dummy
 //extension UIViewController {
 //    var className: String {
 //        return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!;
