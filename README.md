@@ -6,7 +6,7 @@ Just TableView UITableViewAutomaticDimension Sample...
 
 (UITableViewAutomaticDimension is used to check whether the Cell UI is well reflected.)
 - The same objective-c source sample link: https://github.com/ClintJang/JWSTableViewAutomaticDimension
-- 
+
 # Info
 ## Result Image
 
