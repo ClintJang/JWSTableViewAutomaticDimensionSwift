@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCC2223C1F4D009600CCB51D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2223B1F4D009600CCB51D /* Constants.swift */; };
 		BCEB89A41F46725B00A55A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB89A31F46725B00A55A32 /* AppDelegate.swift */; };
 		BCEB89A61F46725B00A55A32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB89A51F46725B00A55A32 /* ViewController.swift */; };
 		BCEB89A91F46725B00A55A32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEB89A71F46725B00A55A32 /* Main.storyboard */; };
 		BCEB89AB1F46725B00A55A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEB89AA1F46725B00A55A32 /* Assets.xcassets */; };
 		BCEB89AE1F46725B00A55A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEB89AC1F46725B00A55A32 /* LaunchScreen.storyboard */; };
-		BCF81FD122100E23009C82AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FCB22100E22009C82AB /* Constants.swift */; };
-		BCF81FD222100E23009C82AB /* SampleTextAndImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FCE22100E22009C82AB /* SampleTextAndImageTableViewCell.swift */; };
-		BCF81FD322100E23009C82AB /* SampleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FCF22100E22009C82AB /* SampleImageTableViewCell.swift */; };
-		BCF81FD422100E23009C82AB /* SampleTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FD022100E22009C82AB /* SampleTextTableViewCell.swift */; };
+		BCF81FC1220E6D25009C82AB /* SampleTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FC0220E6D25009C82AB /* SampleTextTableViewCell.swift */; };
+		BCF81FC3220E73BC009C82AB /* SampleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FC2220E73BC009C82AB /* SampleImageTableViewCell.swift */; };
+		BCF81FC5220E7452009C82AB /* SampleTextAndImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF81FC4220E7452009C82AB /* SampleTextAndImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCC2223B1F4D009600CCB51D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BCEB89A01F46725B00A55A32 /* JWSTableViewAutomaticDimensionSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWSTableViewAutomaticDimensionSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEB89A31F46725B00A55A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEB89A51F46725B00A55A32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,10 +27,9 @@
 		BCEB89AA1F46725B00A55A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCEB89AD1F46725B00A55A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCEB89AF1F46725B00A55A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCF81FCB22100E22009C82AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BCF81FCE22100E22009C82AB /* SampleTextAndImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTextAndImageTableViewCell.swift; sourceTree = "<group>"; };
-		BCF81FCF22100E22009C82AB /* SampleImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleImageTableViewCell.swift; sourceTree = "<group>"; };
-		BCF81FD022100E22009C82AB /* SampleTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTextTableViewCell.swift; sourceTree = "<group>"; };
+		BCF81FC0220E6D25009C82AB /* SampleTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTextTableViewCell.swift; sourceTree = "<group>"; };
+		BCF81FC2220E73BC009C82AB /* SampleImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleImageTableViewCell.swift; sourceTree = "<group>"; };
+		BCF81FC4220E7452009C82AB /* SampleTextAndImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTextAndImageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 		BCEB89A21F46725B00A55A32 /* JWSTableViewAutomaticDimensionSwift */ = {
 			isa = PBXGroup;
 			children = (
-				BCF81FCD22100E22009C82AB /* Cell */,
-				BCF81FCA22100E22009C82AB /* Common */,
+				BCEB89B51F46964700A55A32 /* Common */,
+				BCF81FBF220E6C63009C82AB /* Cell */,
 				BCEB89A31F46725B00A55A32 /* AppDelegate.swift */,
 				BCEB89A51F46725B00A55A32 /* ViewController.swift */,
 				BCEB89A71F46725B00A55A32 /* Main.storyboard */,
@@ -74,20 +74,20 @@
 			path = JWSTableViewAutomaticDimensionSwift;
 			sourceTree = "<group>";
 		};
-		BCF81FCA22100E22009C82AB /* Common */ = {
+		BCEB89B51F46964700A55A32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BCF81FCB22100E22009C82AB /* Constants.swift */,
+				BCC2223B1F4D009600CCB51D /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		BCF81FCD22100E22009C82AB /* Cell */ = {
+		BCF81FBF220E6C63009C82AB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BCF81FCE22100E22009C82AB /* SampleTextAndImageTableViewCell.swift */,
-				BCF81FCF22100E22009C82AB /* SampleImageTableViewCell.swift */,
-				BCF81FD022100E22009C82AB /* SampleTextTableViewCell.swift */,
+				BCF81FC0220E6D25009C82AB /* SampleTextTableViewCell.swift */,
+				BCF81FC2220E73BC009C82AB /* SampleImageTableViewCell.swift */,
+				BCF81FC4220E7452009C82AB /* SampleTextAndImageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jang Wangsu";
 				TargetAttributes = {
 					BCEB899F1F46725B00A55A32 = {
@@ -165,12 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF81FD222100E23009C82AB /* SampleTextAndImageTableViewCell.swift in Sources */,
+				BCF81FC5220E7452009C82AB /* SampleTextAndImageTableViewCell.swift in Sources */,
 				BCEB89A61F46725B00A55A32 /* ViewController.swift in Sources */,
-				BCF81FD422100E23009C82AB /* SampleTextTableViewCell.swift in Sources */,
+				BCC2223C1F4D009600CCB51D /* Constants.swift in Sources */,
+				BCF81FC1220E6D25009C82AB /* SampleTextTableViewCell.swift in Sources */,
+				BCF81FC3220E73BC009C82AB /* SampleImageTableViewCell.swift in Sources */,
 				BCEB89A41F46725B00A55A32 /* AppDelegate.swift in Sources */,
-				BCF81FD322100E23009C82AB /* SampleImageTableViewCell.swift in Sources */,
-				BCF81FD122100E23009C82AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +210,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -217,6 +218,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -267,6 +269,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -274,6 +277,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

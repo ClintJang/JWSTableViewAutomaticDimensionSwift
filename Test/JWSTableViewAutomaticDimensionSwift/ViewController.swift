@@ -17,7 +17,7 @@ import UIKit
  Self-Sizing Table View Cells Sample App
  */
 
-final class ViewController: UIViewController {
+class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // Test Data
@@ -54,19 +54,19 @@ final class ViewController: UIViewController {
             (후렴) 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세.
             -이상입니다.-
             """
-            ,Constants.Key.image: "sample_102_484"
+            ,Constants.Key.image:"sample_102_484"
         ],
         [
-            Constants.Key.text : "값이 없다면?"
-            ,Constants.Key.image: ""
+            Constants.Key.text :"값이 없다면?"
+            ,Constants.Key.image:""
         ],
         [
-            Constants.Key.text : ""
-            ,Constants.Key.image: ""
+            Constants.Key.text :""
+            ,Constants.Key.image:""
         ],
         [
-            Constants.Key.text : "이번엔 특수문자 테스트"
-            ,Constants.Key.image: ""
+            Constants.Key.text :"이번엔 특수문자 테스트"
+            ,Constants.Key.image:""
         ],
         [
             Constants.Key.text :
@@ -117,18 +117,14 @@ final class ViewController: UIViewController {
             
             "ㄸ+ 한자 키" +
             "ぁ あ ぃ い ぅ う ぇ え ぉ お か が き ぎ く ぐ け げ こ ご さ ざ し じ す ず せ ぜ そ ぞ た だ ち ぢ っ つ づ て で と ど な に ぬ ね の は ば ぱ ひ び ぴ ふ ぶ ぷ へ べ ぺ ほ ぼ ぽ ま み む め も ゃ や ゅ ゆ ょ よ ら り る れ ろ ゎ わ ゐ ゑ を ん"
-            ,Constants.Key.image: ""
+            ,Constants.Key.image:""
         ]
     ]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initLayout()
-    }
-}
-
-extension ViewController {
-    private func initLayout() {
+        
         // 이 두줄의 코드 만으로 셀크기를 동적으로 렌더링 하도록 지시할 수 있음!
         // estimatedRowHeight : 예상 수치 설정, Default 0, 그러나 1로 하면 에러가 난다. 2 이상의 값으로 하자
         self.tableView.estimatedRowHeight = 44.0
@@ -136,6 +132,7 @@ extension ViewController {
     }
 }
 
+// MARK: - UITableViewDataSouce, UITableViewDelegate
 // MARK: - UITableViewDataSouce
 extension ViewController: UITableViewDataSource {
     public func numberOfSections(in tableView: UITableView) -> Int {

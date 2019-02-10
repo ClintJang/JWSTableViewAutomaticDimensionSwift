@@ -7,6 +7,11 @@
 //
 
 import Foundation
-
-let kTextKey: String = "TextKey"          // text key
-let kImageKey: String = "ImageKey"        // image key
+struct Constants {
+    struct Key {
+        /// Text Key
+        static let text = "TextKey"
+        /// Image Key
+        static let image = "ImageKey"
+    }
+}
